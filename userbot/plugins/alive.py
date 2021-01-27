@@ -24,7 +24,7 @@ pm_caption += " **🔶__Telethon Version__🔶      : `1.15.0`**\n"
 
 pm_caption += f" **🌐__Sudo Access__🌐          : `{sudou}`**\n"
 
-pm_caption += f" **🔰__More Info__🔰             : [Here](@ELiteBOT_info)**\n"
+pm_caption += f" **🔰__More Info__🔰             : [Here](https://t.me/ELiteBOT_info)**\n"
 
 pm_caption += (
     " **❗️__Support__❗️                   : [ᴊᴏɪɴ](https://t.me/ELITES_SUPPPORT)**\n"
