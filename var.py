@@ -1,4 +1,4 @@
-# EliteBot
+# EliteBot iz op
 import os
 
 ENV = bool(os.environ.get("ENV", False))
