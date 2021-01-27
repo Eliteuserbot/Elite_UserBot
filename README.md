@@ -1,10 +1,9 @@
 ### ☣️ The Most Powerfull Userbot ☣️
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f7c51539e67b483bb8d7749acca51d3a)](https://app.codacy.com/gh/Elite-Userbot/ELITEUSERBOT?utm_source=github.com&utm_medium=referral&utm_content=Elite-Userbot/ELITEUSERBOT&utm_campaign=Badge_Grade_Settings)
-[![Python 3.6](https://img.shields.io/badge/Python-3.6%20or%20newer-blue.svg)](https://www.python.org/downloads/release/python-360/)
-![GitHub repo size](https://img.shields.io/github/repo-size/Elite-Userbot/ELITEUSERBOT)
-[![HitCount](http://hits.dwyl.com/Elite-Userbot/ELITEUSERBOT.svg)](http://hits.dwyl.com/Elite-Userbot/ELITEUSERBOT)
-[![Contact Me](https://img.shields.io/badge/Telegram-Contact%20Me-informational)](https://t.me/lucifeermorningstar)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f7c51539e67b483bb8d7749acca51d3a)](https://github.com/xHOPExINFINTY/Elite_UserBot)
+[![Python 3.6](https://img.shields.io/badge/Python-3.6%20or%20newer-blue.svg)](https://github.com/xHOPExINFINTY/Elite_UserBot)
+![GitHub repo size](https://img.shields.io/github/repo-size/xHOPExINFINTY/Elite_UserBot)
+[![HitCount](http://hits.dwyl.com/xHOPExINFINTY/Elite_UserBot.svg)](https://github.com/xHOPExINFINTY/Elite_UserBot)
 
 
 # †hê 𝙴𝙻𝙸𝚃𝙴 𝚄𝚂𝙴𝚁𝙱𝙾𝚃
