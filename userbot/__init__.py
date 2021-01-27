@@ -32,7 +32,7 @@ LOAD_PLUG = {}
 # PaperPlaneExtended Support Vars
 ENV = os.environ.get("ENV", False)
 
-hell_ID = ["924138714"]
+ELITE_ID = ["1172993438"]
 
 """ PPE initialization. """
 
@@ -141,7 +141,7 @@ if bool(ENV):
 
     # Upstream Repo
     UPSTREAM_REPO_URL = os.environ.get(
-        "UPSTREAM_REPO_URL", "https://github.com/HellBoy-OP/HellBot.git"
+        "UPSTREAM_REPO_URL", "https://github.com/xHOPExINFINTY/Elite_UserBot.git"
     )
 
     # Last.fm Module
@@ -201,4 +201,4 @@ SUDO_LIST = {}
 
 from userbot.cmdhelp import CmdHelp
 from userbot.helpers import *
-from userbot.helpers import functions as helldef
+from userbot.helpers import functions as ELITEdef
