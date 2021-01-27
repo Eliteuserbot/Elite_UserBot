@@ -1,6 +1,6 @@
 import time
 
-from userbot import ALIVE_NAME, StartTime
+from userbot import ALIVE_NAME, StartTime, eliteversion
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
