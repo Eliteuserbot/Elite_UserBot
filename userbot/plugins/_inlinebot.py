@@ -33,11 +33,11 @@ def button(page, modules):
     buttons.append(
         [
             custom.Button.inline(
-                "◀️ ᏰᎯᏣᏦ", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
+                "◀️ Back", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
             ),
             custom.Button.inline("• ❌ •", data="close"),
             custom.Button.inline(
-                "ᏁᏋﾒᎿ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
+                "Next ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
             ),
         ]
     )
@@ -85,7 +85,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                             "✨ REPO ✨", "https://github.com/Elite-Userbot/ELITEUSERBOT"
                         ),
                         custom.Button.url(
-                            "🔰 TUTORIAL 🔰", "https://youtu.be/M2FQJq_sHp4"
+                            "🔰 TUTORIAL 🔰", "UPLOADING SOON"
                         ),
                     ],
                 ],
@@ -97,7 +97,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def page(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "Hoo gya aapka. Kabse tapar tapar dabae jaa rhe h. Khudka bna lo na agr chaiye to. © ELITEẞø† ™",
+                "Sun Hogaya Tera Abb! Kab ka button dabba raha agar tuje bhi ase button dabane toh ja bana apna khud ka bot ya yaha ghusja @ELITES_SUPPPORT",
                 cache_time=0,
                 alert=True,
             )
@@ -113,7 +113,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
             await event.edit(
-                "⚜️ELITEẞø† Menu Provider Is now Closed⚜️\n\n      © eliteẞø† ™"
+                "⚜️EliteBot Menu Provider Is now Closed⚜️\n\n      For Your Own bot Join here @ELITES_SUPPORT ™"
             )
 
     @tgbot.on(
@@ -122,7 +122,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def Information(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "Hoo gya aapka. Kabse tapar tapar dabae jaa rhe h. Khudka bna lo na agr chaiye to. © ELITEẞø† ™",
+                "Sun Hogaya Tera Abb! Kab ka button dabba raha agar tuje bhi ase button dabane toh ja bana apna khud ka bot ya yaha ghusja @ELITES_SUPPPORT",
                 cache_time=0,
                 alert=True,
             )
@@ -155,7 +155,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def commands(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "Hoo gya aapka. Kabse tapar tapar dabae jaa rhe h. Khudka bna lo na agr chaiye to. © Eliteẞø† ™",
+                "Sun Hogaya Tera Abb! Kab ka button dabba raha agar tuje bhi ase button dabane toh ja bana apna khud ka bot ya yaha ghusja @ELITES_SUPPPORT",
                 cache_time=0,
                 alert=True,
             )
