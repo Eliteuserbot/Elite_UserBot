@@ -45,7 +45,7 @@ for name in files:
 
 
 print(
-    "Aree On Ho Gaya Bhenchod!! Abb jake .alive likh ke dekho!! Abb Jaao aur sabki maroo.... Join @HellBot_Official for any help.."
+    "Congo!! Your Bot is Online Now Go To TG and Write .alive FOR CHECK THAT BOT IS ONLINE NOW AND IF NEED HELP THEN COME HERE - https://t.me/ELITES_SUPPPORT "
 )
 
 if len(argv) not in (1, 3, 4):
