@@ -11,26 +11,26 @@ if ludosudo:
 else:
     sudou = "False"
 
-kraken = bot.uid
+userid = bot.uid
 
-PM_IMG = "https://telegra.ph/file/c76453380cd376c960163.jpg"
-pm_caption = "__**🔥🔥𝙀𝙇𝙄𝙏𝙀𝙐𝙎𝙀𝙍𝘽𝙊𝙏 𝙞𝙨 𝙊𝙣𝙡𝙞𝙣𝙚🔥🔥**__\n\n"
+PM_IMG = "https://telegra.ph/file/70fb75f1cb3ab1500b9b4.mp4"
+pm_caption = "__**My EliteBot Is Running**__\n\n"
 
 pm_caption += (
-    f"               __↼🄼🄰🅂🅃🄴🅁⇀__\n**『[{DEFAULTUSER}](tg://user?id={kraken})』**\n\n"
+    f" __↼MY MASTER⇀__\n**『[{DEFAULTUSER}](tg://user?id={userid})』**\n\n"
 )
 
-pm_caption += "🛡️TELETHON🛡️ : `1.15.0` \n"
+pm_caption += f" __EliteBot Version__ : __**{ELITEversion}**__\n"
 
-pm_caption += f"Eliteẞø†     : __**{hellversion}**__\n"
+pm_caption += f" __Sudo Access__ : `{sudou}`\n"
 
-pm_caption += f"⚜️Sudo⚜️            : `{sudou}`\n"
+pm_caption += " __Telethon Version__ : `1.15.0` \n"
 
-pm_caption += "⚠️CHANNEL⚠️   : [ᴊᴏɪɴ](https://t.me/ELITES_SUPPORT)\n"
+pm_caption += " __Support Channel__ : [ᴊᴏɪɴ](https://t.me/ELITES_SUPPORT)\n"
 
-pm_caption += "🔥CREATOR🔥    : [NoB Here](https://t.me/BACKUP_ID_OF_A_T_1724)\n\n"
+pm_caption += " __Creators__ : [NoBs Here](https://t.me/devsofelitebot)\n\n"
 
-pm_caption += "    [✨REPO✨](https://github.com/Elite-Userbot/ELITEUSERBOT) 🔹 [📜License📜](https://github.com/Elite-Userbot/ELITEUSERBOT/blob/master/LICENSE)"
+pm_caption += "    [REPO](https://github.com/xHOPExINFINTY/Elite_UserBot) | [License](https://github.com/xHOPExINFINTY/Elite_UserBot/blob/master/LICENSE)"
 
 
 @bot.on(admin_cmd(outgoing=True, pattern="alive$"))
