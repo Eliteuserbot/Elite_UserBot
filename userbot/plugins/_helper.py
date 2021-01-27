@@ -24,9 +24,7 @@ async def yardim(event):
 async def info(event):
     input_str = event.pattern_match.group(1)
     if input_str == "text":
-        string = (
-            "Total {count} commands found in {plugincount} plugins of EliteBot\n\n"
-        )
+        string = "Total {count} commands found in {plugincount} plugins of EliteBot\n\n"
         hellcount = 0
         plugincount = 0
         for i in sorted(SUDO_LIST):
