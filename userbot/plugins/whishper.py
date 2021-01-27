@@ -1,7 +1,7 @@
 # Made by @Kraken_The_BadASS for @HellBot_Official
 
-from userbot.utils import *
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import *
 
 
 @bot.on(admin_cmd(pattern="wspr ?(.*)"))
@@ -17,6 +17,9 @@ async def wspr(event):
     await tap[0].click(event.chat_id)
     await event.delete()
 
+
 CmdHelp("whisper").add_command(
-  "wspr", "<your message> <reciver username>", "Sends a whisper message to a particular person"
+    "wspr",
+    "<your message> <reciver username>",
+    "Sends a whisper message to a particular person",
 ).add()

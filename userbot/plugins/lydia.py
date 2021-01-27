@@ -4,8 +4,8 @@ import coffeehouse
 from coffeehouse.lydia import LydiaAI
 from telethon import events
 
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 # Non-SQL Mode
 ACC_LYDIA = {}
@@ -50,10 +50,11 @@ async def addcf(event):
         SESSION_ID.update(
             {str(event.chat_id) + " " + str(reply_msg.from_id): session_id}
         )
-        await edit_or_reply(event, 
+        await edit_or_reply(
+            event,
             "Lydia successfully enabled for user: {} in chat: {}".format(
                 str(reply_msg.from_id), str(event.chat_id)
-            )
+            ),
         )
     else:
         await edit_or_reply(event, "Reply to a user to activate Lydia AI on them")
@@ -71,13 +72,16 @@ async def remcf(event):
     try:
         del ACC_LYDIA[str(event.chat_id) + " " + str(reply_msg.from_id)]
         del SESSION_ID[str(event.chat_id) + " " + str(reply_msg.from_id)]
-        await edit_or_reply(event, 
+        await edit_or_reply(
+            event,
             "Lydia successfully disabled for user: {} in chat: {}".format(
                 str(reply_msg.from_id), str(event.chat_id)
-            )
+            ),
         )
     except KeyError:
-        await edit_or_reply(event, "This person does not have Lydia activated on him/her.")
+        await edit_or_reply(
+            event, "This person does not have Lydia activated on him/her."
+        )
 
 
 @bot.on(events.NewMessage(incoming=True))
@@ -97,8 +101,13 @@ async def user(event):
     except KeyError:
         return
 
+
 CmdHelp("lydia").add_command(
-  "eai", "<reply to user>", "Your bot will auto reply to the tagged user. Until you disables it."
+    "eai",
+    "<reply to user>",
+    "Your bot will auto reply to the tagged user. Until you disables it.",
 ).add_command(
-  "dai", "<reply to user>", "Your bot will stop auto reply to the tagged user (if enabled)."
+    "dai",
+    "<reply to user>",
+    "Your bot will stop auto reply to the tagged user (if enabled).",
 ).add()

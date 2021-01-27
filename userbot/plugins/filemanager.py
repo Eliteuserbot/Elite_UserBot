@@ -8,10 +8,8 @@ import io
 import os
 import time
 
-from telethon import events
-
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 if not os.path.isdir("./SAVED"):
     os.makedirs("./SAVED")
@@ -48,7 +46,7 @@ async def lst(event):
             caption="`Output is huge. Sending as a file...`",
         )
         await event.delete()
-        
+
 
 @bot.on(admin_cmd(pattern="ls_local$", outgoing=True))
 @bot.on(sudo_cmd(pattern="ls_local$", allow_sudo=True))
@@ -269,19 +267,21 @@ async def handler(event):
 
 
 CmdHelp("filemanager").add_command(
-  'ls_local', None, 'Gives the list of downloaded medias in your hellbot server.'
+    "ls_local", None, "Gives the list of downloaded medias in your hellbot server."
 ).add_command(
-  'ls_root', None, 'Gives the list of all files in root directory of Hellbot repo.'
+    "ls_root", None, "Gives the list of all files in root directory of Hellbot repo."
 ).add_command(
-  'ls_saved', None, 'Gives the list of all files in Saved directory of your hellbot server'
+    "ls_saved",
+    None,
+    "Gives the list of all files in Saved directory of your hellbot server",
 ).add_command(
-  'rnsaved', 'saved file name', 'Renames the file in saved directory'
+    "rnsaved", "saved file name", "Renames the file in saved directory"
 ).add_command(
-  'rnlocal', 'downloaded file name', 'Renames the file in downloaded directory'
+    "rnlocal", "downloaded file name", "Renames the file in downloaded directory"
 ).add_command(
-  'delsave', 'saved path', 'Deletes the file from given saved path'
+    "delsave", "saved path", "Deletes the file from given saved path"
 ).add_command(
-  'delocal', 'downloaded path', 'Deletes the file from given downloaded path'
+    "delocal", "downloaded path", "Deletes the file from given downloaded path"
 ).add_command(
-  'ls', '<path name>', 'Gives the list of all files in the given path'
+    "ls", "<path name>", "Gives the list of all files in the given path"
 ).add()

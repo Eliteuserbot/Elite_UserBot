@@ -5,8 +5,8 @@
 import random
 import re
 
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="scramble(\s+[\S\s]+|$)"))
@@ -30,6 +30,7 @@ def scramble_word(word):
 
     return first_letter + "".join(middle_letters) + last_letter
 
+
 CmdHelp("scramble").add_command(
-  "scramble", "<your message>", "Jumbles the sentence.", ".scramble Hello world"
+    "scramble", "<your message>", "Jumbles the sentence.", ".scramble Hello world"
 ).add()

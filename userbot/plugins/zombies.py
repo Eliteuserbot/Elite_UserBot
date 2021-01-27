@@ -8,14 +8,13 @@ Use .zombies clean to remove deleted accounts from the groups and channels"""
 
 from asyncio import sleep
 
-from telethon import events
 from telethon.errors import ChatAdminRequiredError, UserAdminInvalidError
 from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import ChatBannedRights
 
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
 from userbot.uniborgConfig import Config
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 # =================== CONSTANT ===================
 
@@ -118,8 +117,11 @@ async def rm_deletedacc(show):
             \nCHAT: {show.chat.title}(`{show.chat_id}`)",
         )
 
+
 CmdHelp("zombies").add_command(
-  "zombies", None, "Searches for the deleted/ghost/zombies account in the group"
+    "zombies", None, "Searches for the deleted/ghost/zombies account in the group"
 ).add_command(
-  "zombies clean", None, "Bans the ghost/deleted/zombies account from the group. Makes the Group a better place"
+    "zombies clean",
+    None,
+    "Bans the ghost/deleted/zombies account from the group. Makes the Group a better place",
 ).add()

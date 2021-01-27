@@ -7,9 +7,9 @@ Available Commands:
 from telethon.tl import functions
 from telethon.tl.types import MessageEntityMentionName
 
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 
 @bot.on(admin_cmd(pattern="create (b|g|c) (.*)"))  # pylint:disable=E0602
 @bot.on(sudo_cmd(pattern="create (b|g|c) (.*)", allow_sudo=True))
@@ -73,6 +73,7 @@ async def _(event):
     else:
         await event.edit("Read `.plinfo create` to know how to use me")
 
+
 @bot.on(admin_cmd(pattern="link(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="link(?: |$)(.*)", allow_sudo=True))
 async def permalink(mention):
@@ -81,12 +82,16 @@ async def permalink(mention):
     if not user:
         return
     if custom:
-        await edit_or_reply(mention, f"[{custom}](tg://user?id={user.id}) \n\n\n  ☝️ Tap To See ☝️")
+        await edit_or_reply(
+            mention, f"[{custom}](tg://user?id={user.id}) \n\n\n  ☝️ Tap To See ☝️"
+        )
     else:
         tag = (
             user.first_name.replace("\u2060", "") if user.first_name else user.username
         )
-        await edit_or_reply(mention, f"[{tag}](tg://user?id={user.id}) \n\n ☝️ Tap to See ☝️")
+        await edit_or_reply(
+            mention, f"[{tag}](tg://user?id={user.id}) \n\n ☝️ Tap to See ☝️"
+        )
 
 
 async def get_user_from_event(event):
@@ -139,11 +144,11 @@ async def get_user_from_id(user, event):
 
 
 CmdHelp("create").add_command(
-  'create b', 'Name of your grp', 'Creates a super and send you link'
+    "create b", "Name of your grp", "Creates a super and send you link"
 ).add_command(
-  'create g', 'Name of your grp', 'Creates a private grp and send you link'
+    "create g", "Name of your grp", "Creates a private grp and send you link"
 ).add_command(
-  'create c', 'Name of your channel', 'Creates a channel and sends you link'
+    "create c", "Name of your channel", "Creates a channel and sends you link"
 ).add_command(
-  'link', '<reply> <text>', 'Makes a permanent link of tagged user with a custom text'
+    "link", "<reply> <text>", "Makes a permanent link of tagged user with a custom text"
 ).add()

@@ -3,8 +3,8 @@
 
 import asyncio
 
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="test ?(.*)"))
@@ -32,10 +32,12 @@ async def _(event):
         await asyncio.sleep(2)
         await edit_or_reply(event, "**SAVING OUTPUT TO HELLBOT LOCAL DATABASE**")
         await asyncio.sleep(3.5)
-        await edit_or_reply(event, 
-            "Your[Hêllẞø†](https:/t.me/hellbot_official) is working Fine...\n       Join @HellBot_Official_Chat For Any Help......"
+        await edit_or_reply(
+            event,
+            "Your[Hêllẞø†](https:/t.me/hellbot_official) is working Fine...\n       Join @HellBot_Official_Chat For Any Help......",
         )
 
+
 CmdHelp("test").add_command(
-  "test", None, "Test wether your bot is running or not."
+    "test", None, "Test wether your bot is running or not."
 ).add()

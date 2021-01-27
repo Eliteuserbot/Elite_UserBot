@@ -2,8 +2,8 @@
 Syntax: .schd <time_in_seconds> ;=; <message to send>"""
 import asyncio
 
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="schd ?(.*)", outgoing=True))
@@ -27,6 +27,10 @@ async def _(event):
     else:
         await event.edit(message)
 
+
 CmdHelp("schedule").add_command(
-  "schd", "<time in secs> - <msg to send>", "Sends the message in given time(seconds)", ".schd 60 - Hello"
+    "schd",
+    "<time in secs> - <msg to send>",
+    "Sends the message in given time(seconds)",
+    ".schd 60 - Hello",
 ).add()

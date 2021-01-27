@@ -10,18 +10,13 @@ from telethon.errors import (
     ChatAdminRequiredError,
 )
 from telethon.errors.rpcerrorlist import MessageTooLongError
-from telethon.tl.functions.channels import (
-    GetFullChannelRequest,
-    GetParticipantsRequest,
-    LeaveChannelRequest,
-)
+from telethon.tl.functions.channels import GetFullChannelRequest, GetParticipantsRequest
 from telethon.tl.functions.messages import GetFullChatRequest, GetHistoryRequest
 from telethon.tl.types import ChannelParticipantsAdmins, MessageActionChannelMigrateFrom
 from telethon.utils import get_input_location
 
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, errors_handler, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, errors_handler, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="chatinfo(?: |$)(.*)", outgoing=True))
@@ -62,8 +57,8 @@ async def get_chatinfo(event):
             await edit_or_reply(event, "`Invalid channel/group`")
             return None
         except ChannelPrivateError:
-            await edit_or_reply(event, 
-                "`This is a private channel/group or I am banned from there`"
+            await edit_or_reply(
+                event, "`This is a private channel/group or I am banned from there`"
             )
             return None
         except ChannelPublicGroupNaError:
@@ -351,7 +346,9 @@ async def get_users(show):
     try:
         await edit_or_reply(show, mentions)
     except MessageTooLongError:
-        await edit_or_reply(show, "Damn, this is a huge group. Uploading users lists as file.")
+        await edit_or_reply(
+            show, "Damn, this is a huge group. Uploading users lists as file."
+        )
         file = open("userslist.txt", "w+")
         file.write(mentions)
         file.close()
@@ -365,9 +362,11 @@ async def get_users(show):
 
 
 CmdHelp("groupdata").add_command(
-  "chatinfo", "<username of group>", "Shows you the total information of the required chat"
-).add_command(
-  "adminlist", None, "Retrives a list of admins in the chat"
-).add_command(
-  "users", "<name of member> (optional)", "Retrives all the (or mentioned) users in the chat"
+    "chatinfo",
+    "<username of group>",
+    "Shows you the total information of the required chat",
+).add_command("adminlist", None, "Retrives a list of admins in the chat").add_command(
+    "users",
+    "<name of member> (optional)",
+    "Retrives all the (or mentioned) users in the chat",
 ).add()

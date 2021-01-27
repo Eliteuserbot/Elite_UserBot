@@ -15,9 +15,9 @@ from telethon.tl import functions
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.messages import GetFullChatRequest
 
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+
 
 async def get_chatinfo(event):
     chat = event.pattern_match.group(1)
@@ -139,7 +139,9 @@ async def _(event):
 
 
 CmdHelp("invite").add_command(
-  "add", "<username/id>", "Adds the given user to the group"
+    "add", "<username/id>", "Adds the given user to the group"
 ).add_command(
-  "inviteall", "<group username>", "Scraps user from the targeted group to your group. Basically Kidnapps user from one chat to another"
+    "inviteall",
+    "<group username>",
+    "Scraps user from the targeted group to your group. Basically Kidnapps user from one chat to another",
 ).add()

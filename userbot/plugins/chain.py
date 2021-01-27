@@ -3,9 +3,8 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 from telethon.tl.functions.messages import SaveDraftRequest
 
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, sudo_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="chain$"))
@@ -30,5 +29,7 @@ async def _(event):
 
 
 CmdHelp("chain").add_command(
-  'chain', 'Reply to a message', 'Reply this command to any msg so that it finds chain length of that msg'
+    "chain",
+    "Reply to a message",
+    "Reply this command to any msg so that it finds chain length of that msg",
 ).add()

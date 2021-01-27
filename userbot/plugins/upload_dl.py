@@ -15,9 +15,9 @@ from hachoir.parser import createParser
 from pySmartDL import SmartDL
 from telethon.tl.types import DocumentAttributeVideo
 
-from userbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+from userbot import LOGS, TEMP_DOWNLOAD_DIRECTORY
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, sudo_cmd
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
@@ -416,13 +416,13 @@ async def uploadas(uas_event):
 
 
 CmdHelp("upld_dwl").add_command(
-  "download", "<reply to a file>", "Downloads the file to hellbot's server"
+    "download", "<reply to a file>", "Downloads the file to hellbot's server"
 ).add_command(
-  "upload", "<path>", "Uploads a locally stored file to the chat"
+    "upload", "<path>", "Uploads a locally stored file to the chat"
 ).add_command(
-  "uploadas stream", "<path>", "Uploads the locally stored file in streamable format"
+    "uploadas stream", "<path>", "Uploads the locally stored file in streamable format"
 ).add_command(
-  "uploadas vn", "<path>", "Uploads the locally stored file in vs format"
+    "uploadas vn", "<path>", "Uploads the locally stored file in vs format"
 ).add_command(
-  "uploadir", "<path>", "Uploads all the files in directory"
+    "uploadir", "<path>", "Uploads all the files in directory"
 ).add()

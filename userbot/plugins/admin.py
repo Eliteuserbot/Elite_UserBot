@@ -8,20 +8,18 @@ Userbot module to help you manage a group
 
 from asyncio import sleep
 
-from telethon import functions
 from telethon.errors import (
     BadRequestError,
     ImageProcessFailedError,
     PhotoCropSizeSmallError,
 )
-from telethon.errors.rpcerrorlist import UserAdminInvalidError, UserIdInvalidError
+from telethon.errors.rpcerrorlist import UserIdInvalidError
 from telethon.tl.functions.channels import (
     EditAdminRequest,
     EditBannedRequest,
     EditPhotoRequest,
 )
 from telethon.tl.functions.messages import UpdatePinnedMessageRequest
-from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import (
     ChatAdminRights,
     ChatBannedRights,
@@ -30,9 +28,9 @@ from telethon.tl.types import (
 )
 
 from userbot import *
-from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
-from userbot.utils import *
 from userbot.cmdhelp import CmdHelp
+from userbot.plugins.sql_helper.mute_sql import is_muted
+from userbot.utils import *
 
 # =================== CONSTANT ===================
 
@@ -271,6 +269,7 @@ async def watcher(event):
         except Exception as e:
             LOGS.info(str(e))
 
+
 @bot.on(admin_cmd("pin($| (.*))"))
 @bot.on(sudo_cmd(pattern="pin($| (.*))", allow_sudo=True))
 @errors_handler
@@ -413,25 +412,29 @@ async def get_user_from_id(user, event):
         return None
     return user_obj
 
+
 CmdHelp("admin").add_command(
-       'setgpic', '<reply to image>', 'Changes the groups display picture'
+    "setgpic", "<reply to image>", "Changes the groups display picture"
 ).add_command(
-        'promote', '<username/reply> <custom rank (optional)>',
-        'Provides admins right to a person in the chat.'
+    "promote",
+    "<username/reply> <custom rank (optional)>",
+    "Provides admins right to a person in the chat.",
 ).add_command(
-        'demote', '<username/reply>', 'Revokes the person admin permissions    in the chat.'
+    "demote", "<username/reply>", "Revokes the person admin permissions    in the chat."
 ).add_command(
-        'ban', '<username/reply> <reason (optional)>', 'Bans the person off your chat.'
+    "ban", "<username/reply> <reason (optional)>", "Bans the person off your chat."
 ).add_command(
-        'unban', '<username/reply>', 'Removes the ban from the person in the chat.'
+    "unban", "<username/reply>", "Removes the ban from the person in the chat."
 ).add_command(
-        'mute', '<username/reply> <reason (optional)>', 'Mutes the person in the chat, works on admins too.'
+    "mute",
+    "<username/reply> <reason (optional)>",
+    "Mutes the person in the chat, works on admins too.",
 ).add_command(
-        'unmute', '<username/reply>', 'Removes the person from the muted list.'
+    "unmute", "<username/reply>", "Removes the person from the muted list."
 ).add_command(
-        'pin', '<reply> or .pin loud', 'Pins the replied message in Group'
+    "pin", "<reply> or .pin loud", "Pins the replied message in Group"
 ).add_command(
-        'kick', '<username/reply>', 'kick the person off your chat'
+    "kick", "<username/reply>", "kick the person off your chat"
 ).add_command(
-        'iundlt', None, 'display last 5 deleted messages in group.'
+    "iundlt", None, "display last 5 deleted messages in group."
 ).add()

@@ -1,11 +1,8 @@
-import random
-import re
-import time
 import asyncio
-import requests
-from telethon import events
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
+import random
+
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 # ================= CONSTANT =================
 
@@ -100,13 +97,14 @@ CRI = [
 ]
 # ===========================================
 
+
 @bot.on(admin_cmd(pattern="cri$", outgoing=True))
 @bot.on(sudo_cmd(pattern="cri$", allow_sudo=True))
 async def cri(e):
     """ y u du dis, i cry everytime !! """
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await edit_or_reply(e, random.choice(CRI))
-        
+
 
 @bot.on(admin_cmd(pattern="hey$", outgoing=True))
 @bot.on(sudo_cmd(pattern="hey$", allow_sudo=True))
@@ -138,6 +136,7 @@ async def payf(e):
         paytext * 1,
     )
     await edit_or_reply(e, pay)
+
 
 @bot.on(admin_cmd(pattern="nopee$", outgoing=True))
 @bot.on(sudo_cmd(pattern="nopee$", allow_sudo=True))
@@ -198,18 +197,16 @@ async def _(event):
 
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 18])
-        
+
 
 CmdHelp("noice").add_command(
-  "f", "<text>", "Gives out the text in 'F' letter"
+    "f", "<text>", "Gives out the text in 'F' letter"
+).add_command("shrug", None, "¯\_(ツ)_/¯").add_command(
+    "hey", None, "Random 'Hello' String."
 ).add_command(
-  "shrug", None, "¯\_(ツ)_/¯"
+    "cri", None, "Random Crying emojies..."
 ).add_command(
-  "hey", None, "Random 'Hello' String."
+    "nopee", None, "Use and see"
 ).add_command(
-  "cri", None, "Random Crying emojies..."
-).add_command(
-  "nopee", None, "Use and see"
-).add_command(
-  "Okk", None, "Ohh Ok"
+    "Okk", None, "Ohh Ok"
 ).add()

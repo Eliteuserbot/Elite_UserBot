@@ -1,5 +1,5 @@
-from userbot.utils import *
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import *
 
 
 @bot.on(admin_cmd(pattern=r"shout", outgoing=True))
@@ -22,6 +22,7 @@ async def shout(args):
         msg = "\n" + result
         await args.edit("`" + msg + "`")
 
+
 CmdHelp("shout").add_command(
-  "shout", "<text>", "Shouts your message in meme way.", ".shout Hello"
+    "shout", "<text>", "Shouts your message in meme way.", ".shout Hello"
 ).add()

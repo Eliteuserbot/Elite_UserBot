@@ -6,8 +6,8 @@ logging.basicConfig(
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="history ?(.*)", outgoing=True))
@@ -36,7 +36,9 @@ async def _(event):
             await borg.forward_messages(chat, reply_message)
             response = await response
         except YouBlockedUserError:
-            await edit_or_reply(event, "`Please unblock` @sangmatainfo_bot `and try again`")
+            await edit_or_reply(
+                event, "`Please unblock` @sangmatainfo_bot `and try again`"
+            )
             return
         if response.text.startswith("Forward"):
             await event.edit(
@@ -45,6 +47,7 @@ async def _(event):
         else:
             await edit_or_reply(event, f"{response.message.message}")
 
+
 CmdHelp("history").add_command(
-  "history", "<reply to a user>", "Fetches the Name history of the tagged user"
+    "history", "<reply to a user>", "Fetches the Name history of the tagged user"
 ).add()

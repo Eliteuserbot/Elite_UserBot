@@ -8,10 +8,10 @@ import random
 
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
-from uniborg.util import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
+from uniborg.util import admin_cmd, edit_or_reply, sudo_cmd
 
 from userbot import ALIVE_NAME
+from userbot.cmdhelp import CmdHelp
 
 SLAP_TEMPLATES = [
     "{user1} {hits} {user2} with a {item}.",
@@ -148,6 +148,7 @@ async def slap(replied_user, event):
 
     return caption
 
+
 CmdHelp("slap").add_command(
-  "slap", "<reply>", "Slaps the replied user with some quotes."
+    "slap", "<reply>", "Slaps the replied user with some quotes."
 ).add()

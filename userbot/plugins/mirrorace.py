@@ -9,8 +9,9 @@ from datetime import datetime
 
 import aiohttp
 import requests
-from userbot.utils import admin_cmd, progress, sudo_cmd, edit_or_reply
+
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, progress, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="ma ?(.*)", outgoing=True))
@@ -167,6 +168,7 @@ async def _(event):
     else:
         await mone.edit("File Not found in local server. Give me a file path :((")
 
+
 CmdHelp("mirrorace").add_command(
-  "ma", "<file path>", "Uploads files to MirrorAce from local file path."
+    "ma", "<file path>", "Uploads files to MirrorAce from local file path."
 ).add()

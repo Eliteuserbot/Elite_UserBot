@@ -1,9 +1,12 @@
 # Made by @Kraken_the_badass for @HellBot_Official
 
 import asyncio
+
 from telethon import events
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
+
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, sudo_cmd
+
 
 @borg.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
@@ -48,6 +51,7 @@ async def gamez(event):
     await tap[0].click(event.chat_id)
     await event.delete()
 
+
 CmdHelp("games").add_command(
-  "xogame", None, "Lets play a game bruh. X-O Game iz here🔥"
+    "xogame", None, "Lets play a game bruh. X-O Game iz here🔥"
 ).add()

@@ -21,8 +21,8 @@ from datetime import datetime
 
 import requests
 
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @borg.on(admin_cmd(pattern="rmbg ?(.*)", outgoing=True))
@@ -34,7 +34,9 @@ async def _(event):
     if event.fwd_from:
         return
     if Config.REM_BG_API_KEY is None:
-        await edit_or_reply(event, "You need API token from remove.bg to use this plugin.")
+        await edit_or_reply(
+            event, "You need API token from remove.bg to use this plugin."
+        )
         return False
     input_str = event.pattern_match.group(1)
     start = datetime.now()
@@ -75,16 +77,18 @@ async def _(event):
             )
         end = datetime.now()
         ms = (end - start).seconds
-        await edit_or_reply(event, 
+        await edit_or_reply(
+            event,
             "Removed dat annoying Backgroup in {} seconds, powered by @HellBot_Official ©™".format(
                 ms
-            )
+            ),
         )
     else:
-        await edit_or_reply(event, 
+        await edit_or_reply(
+            event,
             "ReMove.BG API returned Errors. Please report to @Hellbot_Official\n`{}".format(
                 output_file_name.content.decode("UTF-8")
-            )
+            ),
         )
 
 
@@ -121,6 +125,9 @@ def ReTrieveURL(input_url):
     )
     return r
 
+
 CmdHelp("removebg").add_command(
-  "rmbg", "<reply to img>", "Removes that annoying background from the replied image. NEED TO GET A API KEY"
+    "rmbg",
+    "<reply to img>",
+    "Removes that annoying background from the replied image. NEED TO GET A API KEY",
 ).add()

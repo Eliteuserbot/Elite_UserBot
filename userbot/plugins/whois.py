@@ -2,18 +2,17 @@
 Syntax: .whois @username/userid"""
 
 
-import html
 import os
 
-from requests import get
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
 
-from .. import LOGS, TEMP_DOWNLOAD_DIRECTORY
-from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
+
+from .. import TEMP_DOWNLOAD_DIRECTORY
 
 # Copyright (C) 2019 The Raphielscape Company LLC.
 #
@@ -198,14 +197,17 @@ async def ge(user, event):
         return None
     return user_obj
 
+
 CmdHelp("infos").add_command(
-  "whois", "<reply to user>", "Extracts user info"
+    "whois", "<reply to user>", "Extracts user info"
+).add_command("info", "<reply to user>", "Same as .whois").add_command(
+    "link",
+    "<reply to user>",
+    "Creates a permanent link to a user profile. With custom tag if mentioned",
 ).add_command(
-  "info", "<reply to user>", "Same as .whois"
+    "urid",
+    "<reply to user>",
+    "Gets the replied users's id, username, full name with a link to his/her account",
 ).add_command(
-  "link", "<reply to user>", "Creates a permanent link to a user profile. With custom tag if mentioned"
-).add_command(
-  "urid", "<reply to user>", "Gets the replied users's id, username, full name with a link to his/her account"
-).add_command(
-  "members", None, "Gets the list of all the mwmbers in the particular group"
+    "members", None, "Gets the list of all the mwmbers in the particular group"
 ).add()

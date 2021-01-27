@@ -2,19 +2,11 @@
 # -*- coding: utf-8 -*-
 
 import random
-from random import choice
-import requests
-import re
-import time
 
-from cowpy import cow
-from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import MessageEntityMentionName
-
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
-#$$$$$$$$$$$$$$$$$¢$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$¢$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$¢
+# $$$$$$$$$$$$$$$$$¢$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$¢$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$¢
 
 GENDER = [
     "u is mard",
@@ -24,7 +16,7 @@ GENDER = [
     "u is gey",
     "u is chakka",
 ]
-    
+
 EMOTICONS = [
     "(҂⌣̀_⌣́)",
     "（；¬＿¬)",
@@ -51,7 +43,7 @@ WTF = [
     "╭∩╮(︶ε︶*)chu",
     "( ＾◡＾)っ (‿|‿)",
 ]
-    
+
 LOB = [
     "乂❤‿❤乂",
     "(｡♥‿♥｡)",
@@ -59,7 +51,7 @@ LOB = [
     "໒( ♥ ◡ ♥ )७",
     "༼♥ل͜♥༽",
 ]
-    
+
 CONFUSED = [
     "(・_・ヾ",
     "｢(ﾟﾍﾟ)",
@@ -68,7 +60,7 @@ CONFUSED = [
     "▐ ˵ ͠° (oo) °͠ ˵ ▐",
     "(-_-)ゞ゛",
 ]
-    
+
 DEAD = [
     "(✖╭╮✖)",
     "✖‿✖",
@@ -76,7 +68,7 @@ DEAD = [
     "(✖﹏✖)",
     "∑(✘Д✘๑)",
 ]
-  
+
 SED = [
     "(＠´＿｀＠)",
     "⊙︿⊙",
@@ -85,7 +77,7 @@ SED = [
     "(　´_ﾉ` )",
     "彡(-_-;)彡",
 ]
-    
+
 DOG = [
     "-ᄒᴥᄒ-",
     "◖⚆ᴥ⚆◗",
@@ -105,86 +97,93 @@ SHRUG = [
     "c༼ ͡° ͜ʖ ͡° ༽⊃",
 ]
 
-#✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+# ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+
 
 @bot.on(admin_cmd(pattern=f"gendar$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"gendar$", allow_sudo=True))
 async def metoo(e):
     txt = random.choice(GENDER)
     await edit_or_reply(e, txt)
-    
+
+
 @bot.on(admin_cmd(pattern=f"shrug$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"shrug$", allow_sudo=True))
 async def metoo(e):
     txt = random.choice(SHRUG)
     await edit_or_reply(e, txt)
-    
+
+
 @bot.on(admin_cmd(pattern=f"doge", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"doge", allow_sudo=True))
 async def metoo(e):
     txt = random.choice(DOG)
     await edit_or_reply(e, txt)
-    
+
+
 @bot.on(admin_cmd(pattern=f"mesed$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"mesed$", allow_sudo=True))
 async def metoo(e):
     txt = random.choice(SED)
     await edit_or_reply(e, txt)
-    
+
+
 @bot.on(admin_cmd(pattern=f"medead$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"medead$", allow_sudo=True))
 async def metoo(e):
     txt = random.choice(DEAD)
     await edit_or_reply(e, txt)
-    
+
+
 @bot.on(admin_cmd(pattern=f"confused$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"confused$", allow_sudo=True))
 async def metoo(e):
     txt = random.choice(CONFUSED)
     await edit_or_reply(e, txt)
-    
+
+
 @bot.on(admin_cmd(pattern=f"lobb$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"lobb$", allow_sudo=True))
 async def metoo(e):
     txt = random.choice(LOB)
     await edit_or_reply(e, txt)
-    
+
+
 @bot.on(admin_cmd(pattern=f"wut$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"wut$", allow_sudo=True))
 async def metoo(e):
     txt = random.choice(WTF)
     await edit_or_reply(e, txt)
-    
+
+
 @bot.on(admin_cmd(pattern=f"wavee$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"wavee$", allow_sudo=True))
 async def metoo(e):
     txt = random.choice(WAVING)
     await edit_or_reply(e, txt)
-    
+
+
 @bot.on(admin_cmd(pattern=f"hehe$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"hehe$", allow_sudo=True))
 async def metoo(e):
     txt = random.choice(EMOTICONS)
     await edit_or_reply(e, txt)
-    
-CmdHelp("edits").add_command(
-  "hehe", None, "Use and see"
+
+
+CmdHelp("edits").add_command("hehe", None, "Use and see").add_command(
+    "wavee", None, "Use and see"
+).add_command("wut", None, "Use and see").add_command(
+    "lobb", None, "Use and see"
 ).add_command(
-  "wavee", None, "Use and see"
+    "confused", None, "Use and see"
 ).add_command(
-  "wut", None, "Use and see"
+    "medead", None, "Use and see"
 ).add_command(
-  "lobb", None, "Use and see"
+    "mesed", None, "Use and see"
 ).add_command(
-  "confused", None, "Use and see"
+    "doge", None, "Use and see"
 ).add_command(
-  "medead", None, "Use and see"
+    "shrug", None, "Use and see"
 ).add_command(
-  "mesed", None, "Use and see"
-).add_command(
-  "doge", None, "Use and see"
-).add_command(
-  "shrug", None, "Use and see"
-).add_command(
-  "gendar", None, "Use and see"
+    "gendar", None, "Use and see"
 ).add()

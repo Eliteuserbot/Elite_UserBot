@@ -10,9 +10,9 @@ from asyncio import sleep
 from telethon import events
 
 from userbot import BOTLOG, BOTLOG_CHATID, bot
-from userbot.uniborgConfig import Config
-from userbot.utils import admin_cmd, register
 from userbot.cmdhelp import CmdHelp
+from userbot.uniborgConfig import Config
+from userbot.utils import admin_cmd
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.WARN
@@ -87,10 +87,13 @@ async def set_no_log_p_m(event):
                 await asyncio.sleep(3)
                 await event.delete()
 
+
 CmdHelp("pm_logger").add_command(
-  "save", "<reply>", "Saves the replied message to your pm logger group/channel"
+    "save", "<reply>", "Saves the replied message to your pm logger group/channel"
 ).add_command(
-  "elog", "<chat>", "Enables logging pm messages from the selected chat."
+    "elog", "<chat>", "Enables logging pm messages from the selected chat."
 ).add_command(
-  "nlog", "<chat>", "Disables logging pm messages from the selected chat. Use .elog to enable it again."
+    "nlog",
+    "<chat>",
+    "Disables logging pm messages from the selected chat. Use .elog to enable it again.",
 ).add()

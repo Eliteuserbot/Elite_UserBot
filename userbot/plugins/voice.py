@@ -9,9 +9,8 @@ from datetime import datetime
 
 from gtts import gTTS
 
-from userbot import CMD_HELP
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="voice (.*)"))
@@ -82,5 +81,5 @@ async def _(event):
 
 
 CmdHelp("voice").add_command(
-  "voice", "<lang code> - <reply/text>", "Google Text To Speech Module."
+    "voice", "<lang code> - <reply/text>", "Google Text To Speech Module."
 ).add()

@@ -7,21 +7,27 @@ Available Commands:
 # file, You can obtain one at https://www.gnu.org/licenses/gpl-3.0.en.html
 import os
 import sys
-import asyncio
-from userbot.utils import admin_cmd
+
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
 
 
 @bot.on(admin_cmd(pattern="restart"))
 async def _(event):
     if event.fwd_from:
         return
-  # await asyncio.sleep(2)
-    await event.edit("Restarting [ ██░ ] ...\nType `.ping` or `.help` to check if I am working 🙂")
-  # await asyncio.sleep(2)
-    await event.edit("Restarting [ ███ ]...\nType `.ping` or `.help` to check if I am working 🙂")
-  # await asyncio.sleep(2)
-    await event.edit("Restarted [ ✓ ]...\nType `.ping` or `.help` to check if I am working 🙂")
+    # await asyncio.sleep(2)
+    await event.edit(
+        "Restarting [ ██░ ] ...\nType `.ping` or `.help` to check if I am working 🙂"
+    )
+    # await asyncio.sleep(2)
+    await event.edit(
+        "Restarting [ ███ ]...\nType `.ping` or `.help` to check if I am working 🙂"
+    )
+    # await asyncio.sleep(2)
+    await event.edit(
+        "Restarted [ ✓ ]...\nType `.ping` or `.help` to check if I am working 🙂"
+    )
     await bot.disconnect()
     # https://archive.is/im3rt
     os.execl(sys.executable, sys.executable, *sys.argv)
@@ -36,8 +42,13 @@ async def _(event):
     await event.edit("[ ! ] Turning off...\nManually turn me on later")
     await bot.disconnect()
 
+
 CmdHelp("power_tools").add_command(
-  "restart", None, "Restarts your userbot. Redtarting Bot may result in better functioning of bot when its laggy"
+    "restart",
+    None,
+    "Restarts your userbot. Redtarting Bot may result in better functioning of bot when its laggy",
 ).add_command(
-  "shutdown", None, "Turns off Dynos of Userbot. Userbot will stop working unless you manually turn it on from heroku"
+    "shutdown",
+    None,
+    "Turns off Dynos of Userbot. Userbot will stop working unless you manually turn it on from heroku",
 ).add()

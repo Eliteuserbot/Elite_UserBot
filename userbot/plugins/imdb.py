@@ -10,8 +10,9 @@ import re
 
 import bs4
 import requests
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
+
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 langi = "en"
 
@@ -85,7 +86,8 @@ async def imdb(e):
                 mov_rating = r.strong["title"]
         else:
             mov_rating = "Not available"
-        await edit_or_reply(e, 
+        await edit_or_reply(
+            e,
             "<a href=" + poster + ">&#8203;</a>"
             "<b>Title : </b><code>"
             + mov_title
@@ -113,6 +115,7 @@ async def imdb(e):
     except IndexError:
         await edit_or_reply(e, "Plox enter **Valid movie name** kthx")
 
+
 CmdHelp("imdb").add_command(
-  "imdb", "<movie name>", "Fetches the details of given movie"
+    "imdb", "<movie name>", "Fetches the details of given movie"
 ).add()

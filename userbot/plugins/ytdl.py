@@ -12,8 +12,6 @@ import os
 import time
 
 from telethon.tl.types import DocumentAttributeAudio
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
-from userbot.cmdhelp import CmdHelp
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (
     ContentTooShortError,
@@ -25,6 +23,9 @@ from youtube_dl.utils import (
     UnavailableVideoError,
     XAttrMetadataError,
 )
+
+from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
@@ -147,8 +148,9 @@ async def download_video(v_url):
         await edit_or_reply(v_url, "`The download content was too short.`")
         return
     except GeoRestrictedError:
-        await edit_or_reply(v_url, 
-            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
+        await edit_or_reply(
+            v_url,
+            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`",
         )
         return
     except MaxDownloadsReached:
@@ -171,10 +173,11 @@ async def download_video(v_url):
         return
     c_time = time.time()
     if song:
-        await edit_or_reply(v_url, 
+        await edit_or_reply(
+            v_url,
             f"`Preparing to upload song:`\
         \n**{ytdl_data['title']}**\
-        \nby *{ytdl_data['uploader']}*"
+        \nby *{ytdl_data['uploader']}*",
         )
         await v_url.client.send_file(
             v_url.chat_id,
@@ -196,10 +199,11 @@ async def download_video(v_url):
         os.remove(f"{ytdl_data['id']}.mp3")
         await v_url.delete()
     elif video:
-        await edit_or_reply(v_url, 
+        await edit_or_reply(
+            v_url,
             f"`Preparing to upload video:`\
         \n**{ytdl_data['title']}**\
-        \nby *{ytdl_data['uploader']}*"
+        \nby *{ytdl_data['uploader']}*",
         )
         await v_url.client.send_file(
             v_url.chat_id,
@@ -215,8 +219,13 @@ async def download_video(v_url):
         os.remove(f"{ytdl_data['id']}.mp4")
         await v_url.delete()
 
+
 CmdHelp("ytdl").add_command(
-  "yta", "<yt link>", "Extracts the audio from given youtube link and uploads it to telegram"
+    "yta",
+    "<yt link>",
+    "Extracts the audio from given youtube link and uploads it to telegram",
 ).add_command(
-  "ytv", "<yt link>", "Extracts the video from given youtube link and uploads it to telegram"
+    "ytv",
+    "<yt link>",
+    "Extracts the video from given youtube link and uploads it to telegram",
 ).add()

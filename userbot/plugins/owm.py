@@ -13,12 +13,10 @@ from pytz import country_names as c_n
 from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
-from userbot import CMD_HELP
 from userbot import OPEN_WEATHER_MAP_APPID as OWM_API
-from userbot.events import errors_handler
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
-
+from userbot.events import errors_handler
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 # ===== CONSTANT =====
 DEFCITY = "Delhi"
@@ -45,7 +43,9 @@ async def get_weather(weather):
     """ For .weather command, gets the current weather of a city. """
 
     if not OWM_API:
-        await edit_or_reply(weather, "`Get an API key from` https://openweathermap.org/ `first.`")
+        await edit_or_reply(
+            weather, "`Get an API key from` https://openweathermap.org/ `first.`"
+        )
         return
 
     APPID = OWM_API
@@ -53,7 +53,9 @@ async def get_weather(weather):
     if not weather.pattern_match.group(1):
         CITY = DEFCITY
         if not CITY:
-            await edit_or_reply(weather, "`Please specify a city or set one as default.`")
+            await edit_or_reply(
+                weather, "`Please specify a city or set one as default.`"
+            )
             return
     else:
         CITY = weather.pattern_match.group(1)
@@ -125,7 +127,8 @@ async def get_weather(weather):
         xx = datetime.fromtimestamp(unix, tz=ctimezone).strftime("%I:%M %p")
         return xx
 
-    await edit_or_reply(weather, 
+    await edit_or_reply(
+        weather,
         f"**Temperature:** `{celsius(curtemp)}°C | {fahrenheit(curtemp)}°F`\n"
         + f"**Human Feeling** `{celsius(feel)}°C | {fahrenheit(feel)}°F`\n"
         + f"**Min. Temp.:** `{celsius(min_temp)}°C | {fahrenheit(min_temp)}°F`\n"
@@ -138,11 +141,11 @@ async def get_weather(weather):
         + f"**Sunset:** `{sun(sunset)}`\n\n\n"
         + f"**{desc}**\n"
         + f"`{cityname}, {fullc_n}`\n"
-        + f"`{time}`\n"
+        + f"`{time}`\n",
     )
 
 
-#@register(outgoing=True, pattern="^.setcity(?: |$)(.*)")
+# @register(outgoing=True, pattern="^.setcity(?: |$)(.*)")
 @bot.on(admin_cmd(pattern="setcity(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="setcity(?: |$)(.*)", allow_sudo=True))
 @errors_handler
@@ -150,7 +153,9 @@ async def set_default_city(city):
     """ For .ctime command, change the default userbot country for date and time commands. """
 
     if not OWM_API:
-        await edit_or_reply(city, "`Get an API key from` https://openweathermap.org/ `first.`")
+        await edit_or_reply(
+            city, "`Get an API key from` https://openweathermap.org/ `first.`"
+        )
         return
 
     global DEFCITY
@@ -201,7 +206,5 @@ async def set_default_city(city):
 
 
 CmdHelp("weather").add_command(
-  "setcity", "<city>", "Sets your default city so you can just use .weather"
-).add_command(
-  "weather", "<city>", "Gets the weather of a city"
-).add()
+    "setcity", "<city>", "Sets your default city so you can just use .weather"
+).add_command("weather", "<city>", "Gets the weather of a city").add()

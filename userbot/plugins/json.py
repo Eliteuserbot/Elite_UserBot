@@ -2,8 +2,8 @@
 Syntax: .json"""
 import io
 
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply
 
 
 @bot.on(admin_cmd(pattern="json$", outgoing=True))
@@ -34,6 +34,9 @@ async def _(event):
     else:
         await edit_or_reply(event, "`{}`".format(the_real_message))
 
+
 CmdHelp("json").add_command(
-  "json", "<reply>", "Gets the json data of the replied msg/media from a user/bot/channel"
+    "json",
+    "<reply>",
+    "Gets the json data of the replied msg/media from a user/bot/channel",
 ).add()

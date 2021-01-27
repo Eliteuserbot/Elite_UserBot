@@ -17,7 +17,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
 from userbot.cmdhelp import CmdHelp
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 # ================= CONSTANT =================
 
@@ -420,6 +420,7 @@ HIT = [
 
 # ===========================================
 
+
 @bot.on(admin_cmd(pattern=r"(\w+)say (.*)"))
 @bot.on(sudo_cmd(pattern=r"(\w+)say (.*)", allow_sudo=True))
 async def univsaye(cowmsg):
@@ -468,7 +469,9 @@ async def who(event):
             await edit_or_reply(event, caption)
 
         except:
-            await edit_or_reply(event, "`Can't slap this person, need to fetch some sticks and stones !!`"
+            await edit_or_reply(
+                event,
+                "`Can't slap this person, need to fetch some sticks and stones !!`",
             )
 
 
@@ -623,7 +626,10 @@ async def vapor(vpr):
 @bot.on(sudo_cmd(pattern=f"repo", allow_sudo=True))
 async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await edit_or_reply(e, "Click [here](https://github.com/HellBoy-OP/HellBot) to open this 🔥**Lit AF!!**🔥 __Hêllẞø†__ Repo.. Join channel :- @HellBot_Official")
+        await edit_or_reply(
+            e,
+            "Click [here](https://github.com/HellBoy-OP/HellBot) to open this 🔥**Lit AF!!**🔥 __Hêllẞø†__ Repo.. Join channel :- @HellBot_Official",
+        )
 
 
 @bot.on(admin_cmd(pattern="str(?: |$)(.*)", outgoing=True))
@@ -662,7 +668,9 @@ async def zal(zgfy):
         elif textx:
             message = textx.text
         else:
-            await edit_or_reply(zgfy, "`gͫ ̆ i̛ ̺ v͇̆ ȅͅ   a̢ͦ   s̴̪ c̸̢ ä̸ rͩͣ y͖͞   t̨͚ é̠ x̢͖  t͔͛`"
+            await edit_or_reply(
+                zgfy,
+                "`gͫ ̆ i̛ ̺ v͇̆ ȅͅ   a̢ͦ   s̴̪ c̸̢ ä̸ rͩͣ y͖͞   t̨͚ é̠ x̢͖  t͔͛`",
             )
             return
 
@@ -692,9 +700,12 @@ async def killing(killed):
     """ Dont Kill Too much -_-"""
     if not killed.text[0].isalpha() and killed.text[0] not in ("/", "#", "@", "!"):
         if await killed.get_reply_message():
-            await edit_or_reply(killed, "`My Master killed targeted user by Headshot 😈......`\n"
-                "#Sad_Reacts_Onli\n"
+            await edit_or_reply(
+                killed,
+                "`My Master killed targeted user by Headshot 😈......`\n"
+                "#Sad_Reacts_Onli\n",
             )
+
 
 @bot.on(admin_cmd(pattern="bt$", outgoing=True))
 @bot.on(sudo_cmd(pattern="bt$", allow_sudo=True))
@@ -702,9 +713,12 @@ async def bluetext(bte):
     """ Believe me, you will find this useful. """
     if not bte.text[0].isalpha() and bte.text[0] not in ("/", "#", "@", "!"):
         if await bte.get_reply_message():
-            await edit_or_reply(bte, "`BLUETEXT MUST CLICK.`\n"
-                "`Are you a stupid animal which is attracted to colours?`"
+            await edit_or_reply(
+                bte,
+                "`BLUETEXT MUST CLICK.`\n"
+                "`Are you a stupid animal which is attracted to colours?`",
             )
+
 
 @bot.on(admin_cmd(pattern="owo(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="owo(?: |$)(.*)", allow_sudo=True))
@@ -730,12 +744,14 @@ async def faces(owo):
         reply_text += " " + random.choice(UWUS)
         await edit_or_reply(owo, reply_text)
 
+
 @bot.on(admin_cmd(pattern="react$", outgoing=True))
 @bot.on(sudo_cmd(pattern="react$", allow_sudo=True))
 async def react_meme(react):
     """ Make your userbot react to everything. """
     if not react.text[0].isalpha() and react.text[0] not in ("/", "#", "@", "!"):
         await edit(react, random.choice(FACEREACTS))
+
 
 @bot.on(admin_cmd(pattern="shg$", outgoing=True))
 @bot.on(sudo_cmd(pattern="shg$", allow_sudo=True))
@@ -744,11 +760,13 @@ async def shrugger(shg):
     if not shg.text[0].isalpha() and shg.text[0] not in ("/", "#", "@", "!"):
         await edit_or_reply(shg, random.choice(SHGS))
 
+
 @bot.on(admin_cmd(pattern="10iq$", outgoing=True))
 @bot.on(sudo_cmd(pattern="10iq$", allow_sudo=True))
 async def iqless(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await edit_or_reply(e, "♿")
+
 
 @bot.on(admin_cmd(pattern="mock(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="mock(?: |$)(.*)", allow_sudo=True))
@@ -775,6 +793,7 @@ async def spongemocktext(mock):
 
         await edit_or_reply(mock, "".join(reply_text))
 
+
 @bot.on(admin_cmd(pattern="clap(?: |$)(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="clap(?: |$)(.*)", allow_sudo=True))
 async def claptext(memereview):
@@ -799,6 +818,7 @@ async def claptext(memereview):
         reply_text += " 👏"
         await edit_or_reply(memereview, reply_text)
 
+
 @bot.on(admin_cmd(pattern="smk (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="smk (.*)", allow_sudo=True))
 async def smrk(smk):
@@ -817,6 +837,7 @@ async def smrk(smk):
         smirk = " ツ"
         reply_text = message + smirk
         await edit_or_reply(smk, reply_text)
+
 
 @bot.on(admin_cmd(pattern="lfy (.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="lfy (.*)", allow_sudo=True))
@@ -842,36 +863,34 @@ async def let_me_google_that_for_you(lmgtfy_q):
 
 
 CmdHelp("memes").add_command(
-  "lfy", "<text>", "Search result from LMGTFY site."
+    "lfy", "<text>", "Search result from LMGTFY site."
+).add_command("smk", "<word>", "Adds ツ in last of given word").add_command(
+    "clap", "<reply>", "Gives the replied text a clapping look👏"
 ).add_command(
-  "smk", "<word>", "Adds ツ in last of given word"
+    "mock", "<text>", "MoCkS yOuR tExT iN cOoL sTyLe"
 ).add_command(
-  "clap", "<reply>", "Gives the replied text a clapping look👏"
+    "10iq", None, "Iq tester iz here guys"
 ).add_command(
-  "mock", "<text>", "MoCkS yOuR tExT iN cOoL sTyLe"
+    "shg", None, "Random Shrug Emoji"
 ).add_command(
-  "10iq", None, "Iq tester iz here guys"
+    "react", None, "Reacts randomly"
 ).add_command(
-  "shg", None, "Random Shrug Emoji"
+    "owo", "<text>", "OwO your text. Use and see"
 ).add_command(
-  "react", None, "Reacts randomly"
+    "bt", None, "Do it yourself"
 ).add_command(
-  "owo", "<text>", "OwO your text. Use and see"
+    "pkill", None, "Targeted User Iz Killed"
 ).add_command(
-  "bt", None, "Do it yourself"
+    "cry", None, "Lemme cry in corner ;_;"
 ).add_command(
-  "pkill", None, "Targeted User Iz Killed"
+    ";_;", None, "Shit animation."
 ).add_command(
-  "cry", None, "Lemme cry in corner ;_;"
+    "-_-", None, "Shite animation"
 ).add_command(
-  ";_;", None, "Shit animation."
+    ":/", None, "Shit animation"
 ).add_command(
-  "-_-", None, "Shite animation"
+    "slap", "<Reply>", "Slapps the user virtually"
 ).add_command(
-  ":/", None, "Shit animation"
-).add_command(
-  "slap", "<Reply>", "Slapps the user virtually"
-).add_command(
-  "cowsay", "<text>", "Use and see....."
+    "cowsay", "<text>", "Use and see....."
 ).add()
-#HellBot_OP
+# HellBot_OP

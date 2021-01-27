@@ -2,8 +2,9 @@
 Syntax: .meaning <word>"""
 
 import requests
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
+
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="meaning (.*)", outgoing=True))
@@ -46,6 +47,7 @@ async def _(event):
         pass
     await edit_or_reply(event, caption_str)
 
+
 CmdHelp("meaning").add_command(
-  "meaning", "<word>", "Gives you the meaning of that word"
+    "meaning", "<word>", "Gives you the meaning of that word"
 ).add()

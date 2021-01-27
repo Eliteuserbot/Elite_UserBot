@@ -1,7 +1,7 @@
 import asyncio
 
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern=r"gf$", outgoing=True))
@@ -39,6 +39,7 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 21])
 
+
 @bot.on(admin_cmd(pattern=r"mom$", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"mom$", allow_sudo=True))
 async def _(event):
@@ -74,8 +75,7 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 21])
 
-CmdHelp("mom-gf").add_command(
-  "mom", None, "Uhhhh... Try it and see"
-).add_command(
-  "gf", None, "Same as .mom but this time its gf"
+
+CmdHelp("mom-gf").add_command("mom", None, "Uhhhh... Try it and see").add_command(
+    "gf", None, "Same as .mom but this time its gf"
 ).add()

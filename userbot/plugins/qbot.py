@@ -2,8 +2,8 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import bot
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern=r"ss(?: |$)(.*)", outgoing=True))
@@ -35,12 +35,15 @@ async def _(event):
             await event.reply("```Please unblock @QuotLyBot and try again```")
             return
         if response.text.startswith("Hi!"):
-            await edit_or_reply(event, "```Can you kindly disable your forward privacy settings for good?```"
+            await edit_or_reply(
+                event,
+                "```Can you kindly disable your forward privacy settings for good?```",
             )
         else:
             await event.delete()
             await bot.forward_messages(event.chat_id, response.message)
 
+
 CmdHelp("qbot").add_command(
-  "ss", "<reply to a text msg>", "Makes the sticker of the replied text message."
+    "ss", "<reply to a text msg>", "Makes the sticker of the replied text message."
 ).add()

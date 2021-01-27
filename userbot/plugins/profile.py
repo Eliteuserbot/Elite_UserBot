@@ -13,9 +13,9 @@ from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
 from telethon.tl.functions.photos import DeletePhotosRequest, GetUserPhotosRequest
 from telethon.tl.types import Channel, Chat, InputPhoto, User
 
-from userbot import CMD_HELP, bot
-from userbot.utils import admin_cmd
+from userbot import bot
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd
 
 # ====================== CONSTANT ===============================
 INVALID_MEDIA = "```The extension of the media entity is invalid.```"
@@ -185,19 +185,25 @@ async def _(event):
 
 
 CmdHelp("profile").add_command(
-  "count", None, "Counts your groups, chats, bots etc..."
+    "count", None, "Counts your groups, chats, bots etc..."
 ).add_command(
-  "myusernames", None, "Shows usernames reserved by you. That is public groups or channels created by you"
+    "myusernames",
+    None,
+    "Shows usernames reserved by you. That is public groups or channels created by you",
 ).add_command(
-  "delpfp", "<count>", "Deletes your Telegram profile picture(s)."
+    "delpfp", "<count>", "Deletes your Telegram profile picture(s)."
 ).add_command(
-  "pbio", "<text>", "Changes your Telegram bio", ".pbio Hello there, This iz my bio"
+    "pbio", "<text>", "Changes your Telegram bio", ".pbio Hello there, This iz my bio"
 ).add_command(
-  "ppic", "<reply to image>", "Changes your Telegram profie picture with the one you replied to"
+    "ppic",
+    "<reply to image>",
+    "Changes your Telegram profie picture with the one you replied to",
 ).add_command(
-  "pname", "<firstname> or <firstname | lastname>", "Changes Your Telegram account name"
+    "pname",
+    "<firstname> or <firstname | lastname>",
+    "Changes Your Telegram account name",
 ).add_command(
-  "username", "<new username>", "Changes your Telegram Account Username"
+    "username", "<new username>", "Changes your Telegram Account Username"
 ).add_command(
-  "kickme", None, "Gets out of the grp..."
+    "kickme", None, "Gets out of the grp..."
 ).add()

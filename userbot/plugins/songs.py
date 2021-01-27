@@ -6,13 +6,13 @@
 
 
 import asyncio
-import re
+
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot import bot
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply, progress
 from userbot.cmdhelp import CmdHelp
 from userbot.helpers.functions import deEmojify
+from userbot.utils import admin_cmd, edit_or_reply, progress, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="lyrics(?: |$)(.*)", outgoing=True))
@@ -39,7 +39,9 @@ async def nope(kraken):
 
     await kraken.delete()
 
-#>>>>>>>>>>>>>>>>>>✓✓✓✓✓<<<<<<<<<<<<<<<<<<<
+
+# >>>>>>>>>>>>>>>>>>✓✓✓✓✓<<<<<<<<<<<<<<<<<<<
+
 
 @bot.on(admin_cmd(pattern="gaana ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern="gaana ?(.*)", allow_sudo=True))
@@ -365,6 +367,7 @@ async def download_video(v_url):
 
 # -------------------------------------------------------------------------------
 import os
+
 from telethon.tl.functions.channels import JoinChannelRequest
 
 try:
@@ -379,7 +382,6 @@ os.system("rm -rf *.mp3")
 def bruh(name):
 
     os.system("instantmusic -q -s " + name)
-
 
 
 @bot.on(admin_cmd(pattern="getsong(?: |$)(.*)", outgoing=True))
@@ -402,7 +404,9 @@ async def getmusic(so):
             """ - don't spam notif - """
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await edit_or_reply(so, "Please unblock @SongsForYouBot and try searching again🤐")
+            await edit_or_reply(
+                so, "Please unblock @SongsForYouBot and try searching again🤐"
+            )
             return
         await edit_or_reply(so, "Ohh.. I got something!! Wait sending😋🤙")
         await asyncio.sleep(3)
@@ -439,7 +443,9 @@ async def DeezLoader(Deezlod):
         return
     d_link = Deezlod.pattern_match.group(1)
     if ".com" not in d_link:
-        await edit_or_reply(Deezlod, "` I need a link to download something pro.`**(._.)**")
+        await edit_or_reply(
+            Deezlod, "` I need a link to download something pro.`**(._.)**"
+        )
     else:
         await edit_or_reply(Deezlod, "**Initiating Download!**")
     chat = "@DeezLoadBot"
@@ -454,7 +460,9 @@ async def DeezLoader(Deezlod):
             """ - don't spam notif - """
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await edit_or_reply(Deezlod, "**Error:** `unblock` @DeezLoadBot `and retry!`")
+            await edit_or_reply(
+                Deezlod, "**Error:** `unblock` @DeezLoadBot `and retry!`"
+            )
             return
         await bot.send_file(Deezlod.chat_id, song, caption=details.text)
         await Deezlod.client.delete_messages(
@@ -506,19 +514,28 @@ async def _(event):
         except YouBlockedUserError:
             await event.edit("**Error:** `unblock` @DeezLoadBot `and retry!`")
 
-#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 CmdHelp("songs").add_command(
-  "song", "<song name>", "Searches the song from youtube and upload in current chat in audio(.mp3) format. •Highest Quality"
+    "song",
+    "<song name>",
+    "Searches the song from youtube and upload in current chat in audio(.mp3) format. •Highest Quality",
 ).add_command(
-  "vsong", "<song name>", "Searches the song from youtube and upload in current chat in video(.mp4) format. •Highest Quality"
+    "vsong",
+    "<song name>",
+    "Searches the song from youtube and upload in current chat in video(.mp4) format. •Highest Quality",
 ).add_command(
-  "getsong", "<song name>", "Searches song from a local tg bot @Songsforyoubot and sends the music in current chat"
+    "getsong",
+    "<song name>",
+    "Searches song from a local tg bot @Songsforyoubot and sends the music in current chat",
 ).add_command(
-  "gaana", "<song name>", "Searches song from a local tg bot @FindmusicpleaseBot and sends the music in current chat"
+    "gaana",
+    "<song name>",
+    "Searches song from a local tg bot @FindmusicpleaseBot and sends the music in current chat",
 ).add_command(
-  "sdd", "<song link>", "Downloads the song from given link"
+    "sdd", "<song link>", "Downloads the song from given link"
 ).add_command(
-  "dwlsong", "<song link>", "Same as .sdd but downloads from spotify and deezer"
+    "dwlsong", "<song link>", "Same as .sdd but downloads from spotify and deezer"
 ).add_command(
-  "lyrics", "<song name>", "Sends the lyrics of given song."
+    "lyrics", "<song name>", "Sends the lyrics of given song."
 ).add()

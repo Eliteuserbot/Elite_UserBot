@@ -1,8 +1,9 @@
 """WikiMedia.ORG
 Syntax: .wikimedia Query"""
 import requests
-from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
+
 from userbot.cmdhelp import CmdHelp
+from userbot.utils import admin_cmd, sudo_cmd
 
 
 @bot.on(admin_cmd(pattern="wikimedia (.*)"))
@@ -44,6 +45,7 @@ async def _(event):
         )
     await event.edit("**Search**: {} \n\n **Results**: {}".format(input_str, result))
 
+
 CmdHelp("wikimedia").add_command(
-  "wikimedia", "<query>", "Searchs the query from WikiMedia"
+    "wikimedia", "<query>", "Searchs the query from WikiMedia"
 ).add()
