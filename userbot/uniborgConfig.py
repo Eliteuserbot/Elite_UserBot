@@ -160,9 +160,9 @@ if ENV:
         LYDIA_API = os.environ.get("LYDIA_API", None)
         PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", None))
         UPSTREAM_REPO = os.environ.get(
-            "UPSTREAM_REPO", "https://github.com/HellBoy-OP/HellBot"
+            "UPSTREAM_REPO", "https://github.com/xHOPExINFINTY/Elite_UserBot"
         )
-        EXTRA_HELLBOT = os.environ.get("EXTRA_HELLBOT", -1001221881562)
+        EXTRA_ELITEBOT = os.environ.get("EXTRA_HELLBOT", -1001177552806)
         PM_DATA = os.environ.get("PM_DATA", "ENABLE")
 
 
