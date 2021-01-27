@@ -1,6 +1,6 @@
 import time
 
-from userbot import ALIVE_NAME, StartTime
+from userbot import ALIVE_NAME, StartTime, Eliteversion
 from userbot.utils import admin_cmd, edit_or_reply, sudo_cmd
 
 
@@ -65,7 +65,7 @@ async def amireallyalive(alive):
         hell_caption += f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈\n"
         hell_caption += f"__**BOT STATUS**__\n\n"
         hell_caption += f"**★ Telethon version :** `1.15.0`\n"
-        hell_caption += f"**★ HêllBø† :**`{hellversion}`\n"
+        hell_caption += f"**★ HêllBø† :**`{Eliteversion}`\n"
         hell_caption += f"**★ Uptime :** `{uptime}\n`"
         hell_caption += f"**★ Master:** {mention}\n"
         await alive.client.send_file(
@@ -79,7 +79,7 @@ async def amireallyalive(alive):
             f"≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈ \n"
             f"__**BOT STATUS**__\n\n"
             f"**★ Telethon Version :** `1.15.0`\n"
-            f"**★ HêllBø†:** `{hellversion}`\n"
+            f"**★ HêllBø†:** `{Eliteversion}`\n"
             f"**★ Uptime :** `{uptime}\n`"
             f"**★ Master:** {mention}\n",
         )
