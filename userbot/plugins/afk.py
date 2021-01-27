@@ -1,5 +1,4 @@
-# by uniborg...Thanks @spechide
-# Now will be used in HellBot too....
+# hellbot afkfile thanks to @karken_the_badass
 import asyncio
 import datetime
 from datetime import datetime
@@ -34,12 +33,12 @@ async def set_not_afk(event):
         total_afk_time = str((afk_end - afk_start))
     current_message = event.message.message
     if ".afk" not in current_message and "yes" in USER_AFK:  # pylint:disable=E0602
-        hellbot = await borg.send_message(
+        Elitebot = await borg.send_message(
             event.chat_id,
-            "🔥__Back alive!__\n**No Longer afk.**\n⏱️ `Was afk for:``"
+            "🔥__Back alive!__\n**__No Longer afk.__**\n⏱️ `Was Afk for:``"
             + total_afk_time
             + "`",
-            file=hellpic,
+            file=Elitepic,
         )
         try:
             await borg.send_message(  # pylint:disable=E0602
@@ -53,7 +52,7 @@ async def set_not_afk(event):
                 event.chat_id,
                 "Please set `PRIVATE_GROUP_BOT_API_ID` "
                 + "for the proper functioning of afk functionality "
-                + "Ask in @HellBot_Official_Chat to get help setting this value\n\n `{}`".format(
+                + "Ask in @Elites_Support to get help setting this value\n\n `{}`".format(
                     str(e)
                 ),
                 reply_to=event.message.id,
@@ -91,10 +90,10 @@ async def on_afk(event):
         msg = None
 
         message_to_reply = (
-            f"Hey!! My master is currently offline... Since when?\n**For** `{total_afk_time}`\n"
-            + f"\n\n👇__The Reason Is__👇 :-\n`{reason}`"
+            f"Hey! My Master Is Offline... Since - `{total_afk_time}`\n"
+            + f"\n\n__For Reason__ :-\n`{reason}`"
             if reason
-            else f"**Heyy!**\n__I am currently unavailable.__\n__Since when, you ask? From__ `{total_afk_time}`\nI'll be back when I feel to come🚶"
+            else f"**Hey! My Master Is Offline... Since - `{total_afk_time}`\n\nThey Will back When They feel to come**"
         )
         msg = await event.reply(message_to_reply, file=hellpic)
         await asyncio.sleep(2)
@@ -107,7 +106,7 @@ async def on_afk(event):
 async def _(event):
     if event.fwd_from:
         return
-    krakenop = await event.get_reply_message()
+    Elite = await event.get_reply_message()
     global USER_AFK  # pylint:disable=E0602
     global afk_time  # pylint:disable=E0602
     global last_afk_message  # pylint:disable=E0602
@@ -122,23 +121,23 @@ async def _(event):
     start_1 = datetime.now()
     afk_start = start_1.replace(microsecond=0)
     reason = event.pattern_match.group(1)
-    hellpic = await event.client.download_media(krakenop)
+    Elitepic = await event.client.download_media(Elite)
     if not USER_AFK:  # pylint:disable=E0602
         last_seen_status = await borg(  # pylint:disable=E0602
             functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
         )
         if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
             afk_time = datetime.datetime.now()  # pylint:disable=E0602
-        USER_AFK = f"yes: {reason} {hellpic}"  # pylint:disable=E0602
+        USER_AFK = f"yes: {reason} {Elitepic}"  # pylint:disable=E0602
         if reason:
             await borg.send_message(
                 event.chat_id,
-                f"__**I'm going afk🚶**__ \n⚜️ Because `{reason}`",
-                file=hellpic,
+                f"__Me iz going afk__\n⚜️ Because - {reason}",
+                file=Elitepic,
             )
         else:
             await borg.send_message(
-                event.chat_id, f"**I am Going afk!**🚶", file=hellpic
+                event.chat_id, f"**Me iz Going afk!**", file=Elitepic
             )
         await asyncio.sleep(0.001)
         await event.delete()
@@ -146,7 +145,7 @@ async def _(event):
             await borg.send_message(  # pylint:disable=E0602
                 Config.PRIVATE_GROUP_BOT_API_ID,  # pylint:disable=E0602
                 f"#AFKTRUE \nSet AFK mode to True, and Reason is {reason}",
-                file=hellpic,
+                file=Elitepic,
             )
         except Exception as e:  # pylint:disable=C0103,W0703
             logger.warn(str(e))  # pylint:disable=E0602
