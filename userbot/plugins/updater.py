@@ -77,7 +77,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         if HEROKU_APP_NAME is None:
             await event.edit(
                 "**Please set up the** `HEROKU_APP_NAME` **variable"
-                " to be able to deploy your Hêllẞøt.**"
+                " to be able to deploy your EliteBot.**"
             )
             repo.__del__()
             return
@@ -87,7 +87,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f"{txt}\n" "**Invalid Heroku credentials for updating Hêllẞøt.**"
+                f"{txt}\n" "**Invalid Heroku credentials for updating EliteBot.**"
             )
             return repo.__del__()
         ups_rem.fetch(ac_br)
@@ -112,7 +112,7 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             return await event.delete()
         else:
             await event.edit(
-                "Updated your __Hêllẞø†__ successfully sur!!!\n\nNow type .ping after 5 mins to check if I'm on🚶😏"
+                "Updated your __EliteBot__ successfully sar!!!\n\nNow type .ping after 5 mins to check if I'm online"
             )
     else:
         await event.edit("**Please set up** `HEROKU_API_KEY` **variable.**")
@@ -126,7 +126,7 @@ async def update(event, repo, ups_rem, ac_br):
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
     await event.edit(
-        "Updated your __Hêllẞø†__ successfully sur!!!\n\nNow type .ping after 5 mins to check if I'm on🚶😏"
+        "Updated your __EliteBot__ successfully sar!!!\n\nNow type .ping after 5 mins to check if I'm online"
     )
     # Spin a new instance of bot
     args = [sys.executable, "-m", "userbot"]
@@ -186,7 +186,7 @@ async def upstream(event):
     """ - Special case for deploy - """
     if conf == "deploy":
         await event.edit(
-            "Updated your Hêllẞø† successfully sur!!!\n\nNow type .ping after 5 mins to check if I'm on🚶😏\n\n**NOTE :** This is a powerful update process."
+            "Updated your __EliteBot__ successfully sar!!!\n\nNow type .ping after 5 mins to check if I'm online\n\n**NOTE :** Updating The Bot Wait Because huge update."
         )
         await deploy(event, repo, ups_rem, ac_br, txt)
         return
