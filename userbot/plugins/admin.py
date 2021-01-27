@@ -324,7 +324,7 @@ async def kick(usr):
     if not user:
         await edit_or_reply(usr, "`Couldn't fetch user.`")
         return
-    hellevent = await edit_or_reply(usr, "`Kicking...`")
+    await edit_or_reply(usr, "`Kicking...`")
     try:
         await usr.client.kick_participant(usr.chat_id, user.id)
         await sleep(0.5)
@@ -336,7 +336,9 @@ async def kick(usr):
             f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`\nReason: {reason}"
         )
     else:
-        await Eliteevent.edit(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
+        await Eliteevent.edit(
+            f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`"
+        )
     if BOTLOG:
         await usr.client.send_message(
             BOTLOG_CHATID,
