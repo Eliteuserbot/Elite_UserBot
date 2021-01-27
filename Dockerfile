@@ -1,4 +1,4 @@
-FROM HellBoy-OP/HellBot:latest
+FROM xHOPExINFINTY/Elite_UserBot:latest
 
 #clonning repo 
 RUN git clone https://github.com/HellBoy-OP/L/HellBot.git/root/userbot
