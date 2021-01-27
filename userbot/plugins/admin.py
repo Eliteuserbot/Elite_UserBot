@@ -36,8 +36,8 @@ from userbot.utils import *
 
 PP_TOO_SMOL = "`The image is too small`"
 PP_ERROR = "`Failure while processing the image`"
-NO_ADMIN = "`I am not an admin! Chutiya sala`"
-NO_PERM = "`I don't have sufficient permissions! Sed -_-`"
+NO_ADMIN = "`I am not an admin! Sed -_-`"
+NO_PERM = "`I don't have sufficient permissions! Ok! Google Play Lag gaye`"
 CHAT_PP_CHANGED = "`Chat Picture Changed Successfully`"
 INVALID_MEDIA = "`Invalid media Extension`"
 
@@ -92,21 +92,21 @@ async def set_group_photo(gpic):
             photo = await gpic.client.download_file(replymsg.media.document)
         else:
             await edit_or_reply(gpic, INVALID_MEDIA)
-    kraken = None
+    Elite = None
     if photo:
         try:
             await gpic.client(
                 EditPhotoRequest(gpic.chat_id, await gpic.client.upload_file(photo))
             )
             await edit_or_reply(gpic, CHAT_PP_CHANGED)
-            kraken = True
+            Elite = True
         except PhotoCropSizeSmallError:
             await edit_or_reply(gpic, PP_TOO_SMOL)
         except ImageProcessFailedError:
             await edit_or_reply(gpic, PP_ERROR)
         except Exception as e:
             await edit_or_reply(gpic, f"**Error : **`{str(e)}`")
-        if BOTLOG and kraken:
+        if BOTLOG and Elite:
             await gpic.client.send_message(
                 BOTLOG_CHATID,
                 "#GROUPPIC\n"
@@ -133,17 +133,17 @@ async def promote(promt):
         delete_messages=True,
         pin_messages=True,
     )
-    hellevent = await edit_or_reply(promt, "`Promoting...`")
+    Eliteevent = await edit_or_reply(promt, "`Promoting...`")
     user, rank = await get_user_from_event(promt)
     if not rank:
-        rank = "ǟɖʍɨռ"
+        rank = "Admene"
     if not user:
         return
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await hellevent.edit("`Promoted Successfully! Abb nacho bencho💃🕺`")
+        await Eliteevent.edit("`Promoted Successfully! Now You Are Pro AF 😏`")
     except BadRequestError:
-        await hellevent.edit(NO_PERM)
+        await Eliteevent.edit(NO_PERM)
         return
     if BOTLOG:
         await promt.client.send_message(
@@ -164,7 +164,7 @@ async def demote(dmod):
     if not admin and not creator:
         await edit_or_reply(dmod, NO_ADMIN)
         return
-    hellevent = await edit_or_reply(dmod, "`Demoting...`")
+    Eliteevent = await edit_or_reply(dmod, "`Demoting...`")
     rank = "admeme"
     user = await get_user_from_event(dmod)
     user = user[0]
@@ -181,9 +181,9 @@ async def demote(dmod):
     try:
         await dmod.client(EditAdminRequest(dmod.chat_id, user.id, newrights, rank))
     except BadRequestError:
-        await hellevent.edit(NO_PERM)
+        await Eliteevent.edit(NO_PERM)
         return
-    await hellevent.edit("`Demoted retard Successfully..... Better luck next time🚶`")
+    await Eliteevent.edit("`Demoted Successfully..... Better luck next time🚶`")
     if BOTLOG:
         await dmod.client.send_message(
             BOTLOG_CHATID,
@@ -206,23 +206,23 @@ async def ban(bon):
     user, reason = await get_user_from_event(bon)
     if not user:
         return
-    hellevent = await edit_or_reply(bon, "`Banning this retard`")
+    Eliteevent = await edit_or_reply(bon, "`Banning This Kiddo`")
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
-        await hellevent.edit(NO_PERM)
+        await Eliteevent.edit(NO_PERM)
         return
     try:
         reply = await bon.get_reply_message()
         if reply:
             await reply.delete()
     except BadRequestError:
-        await hellevent.edit("`I ain't got msg deleting right. But still Banned!`")
+        await Eliteevent.edit("`I ain't got msg deleting right. But still Banned!`")
         return
     if reason:
-        await hellevent.edit(f"`{str(user.id)}` is banned !!\nReason: {reason}")
+        await Eliteevent.edit(f"`{str(user.id)}` is banned !!\nReason: {reason}")
     else:
-        await hellevent.edit(f"{str(user.id)} is banned😏 !!")
+        await Eliteevent.edit(f"{str(user.id)} is banned😏 !!")
     if BOTLOG:
         await bon.client.send_message(
             BOTLOG_CHATID,
@@ -242,14 +242,14 @@ async def nothanos(unbon):
     if not admin and not creator:
         await edit_or_reply(unbon, NO_ADMIN)
         return
-    hellevent = await edit_or_reply(unbon, "`Unbanning...`")
+    Eliteevent = await edit_or_reply(unbon, "`Unbanning...`")
     user = await get_user_from_event(unbon)
     user = user[0]
     if not user:
         return
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await hellevent.edit("```Unbanned Successfully. Granting another chance🚶.```")
+        await Eliteevent.edit("```Unbanned Successfully. Granting another chance🚶.```")
         if BOTLOG:
             await unbon.client.send_message(
                 BOTLOG_CHATID,
@@ -258,7 +258,7 @@ async def nothanos(unbon):
                 f"CHAT: {unbon.chat.title}(`{unbon.chat_id}`)",
             )
     except UserIdInvalidError:
-        await hellevent.edit("`Uh oh my unban logic broke!`")
+        await Eliteevent.edit("`Uh oh my unban logic broke!`")
 
 
 @command(incoming=True)
@@ -329,14 +329,14 @@ async def kick(usr):
         await usr.client.kick_participant(usr.chat_id, user.id)
         await sleep(0.5)
     except Exception as e:
-        await hellevent.edit(NO_PERM + f"\n{str(e)}")
+        await Eliteevent.edit(NO_PERM + f"\n{str(e)}")
         return
     if reason:
-        await hellevent.edit(
+        await Eliteevent.edit(
             f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`\nReason: {reason}"
         )
     else:
-        await hellevent.edit(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
+        await Eliteevent.edit(f"`Kicked` [{user.first_name}](tg://user?id={user.id})`!`")
     if BOTLOG:
         await usr.client.send_message(
             BOTLOG_CHATID,
