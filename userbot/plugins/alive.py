@@ -26,7 +26,7 @@ pm_caption += " __Telethon Version__ : `1.15.0` \n"
 
 pm_caption += " __Support Channel__ : [ᴊᴏɪɴ](https://t.me/ELITES_SUPPORT)\n"
 
-pm_caption += " __Creators__ : [NoBs Here](https://t.me/devsofelitebot)\n\n"
+pm_caption += " __Creators__ : [NoBs Here](https://t.me/ELITES_OFFICIAL)\n\n"
 
 pm_caption += "    [REPO](https://github.com/xHOPExINFINTY/Elite_UserBot) | [License](https://github.com/xHOPExINFINTY/Elite_UserBot/blob/master/LICENSE)"
 
