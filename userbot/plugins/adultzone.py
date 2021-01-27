@@ -1,4 +1,4 @@
-# credits to hellbot 
+# credits to hellbot
 
 import asyncio
 import os
