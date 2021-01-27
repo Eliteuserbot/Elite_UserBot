@@ -26,9 +26,13 @@ pm_caption += f" **🌐__Sudo Access__🌐        : `{sudou}`**\n"
 
 pm_caption += f" **🔰__More Info__🔰          : [Here](@ELiteBOT_info)**\n"
 
-pm_caption += " **❗️__Support__❗️             : [ᴊᴏɪɴ](https://t.me/ELITES_SUPPPORT)**\n"
+pm_caption += (
+    " **❗️__Support__❗️             : [ᴊᴏɪɴ](https://t.me/ELITES_SUPPPORT)**\n"
+)
 
-pm_caption += " **🛑__Channel__🛑             : [JOIN](https://t.me/ELITES_OFFICIAL)**\n\n"
+pm_caption += (
+    " **🛑__Channel__🛑             : [JOIN](https://t.me/ELITES_OFFICIAL)**\n\n"
+)
 
 pm_caption += "                ✨[REPO](https://github.com/xHOPExINFINTY/Elite_UserBot)✨  |  ✨[License](https://github.com/xHOPExINFINTY/Elite_UserBot/blob/master/LICENSE)✨"
 
