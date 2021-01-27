@@ -1,6 +1,6 @@
 {
-  "name": "𝙴𝙻𝙸𝚃𝙴𝚄𝚂𝙴𝚁𝙱𝙾𝚃",
-  "description": "The best userbot made by @ELITE_SUPPORT. Made with Love And Phone And Hardwork and... Nhi aur kahi se to nhi bana....For Support Join @ELITE_SUPPORT ",
+  "name": "Elite_UserBot",
+  "description": "HEY! THIS IS ELITEBOT. FILL UP REQ.. VARS AND ENJOY THE BOT AND CONTRIBUTORS OF ELITESBOT ARE HERE - https://t.me/devsofelitebot",
   "logo": "https://telegra.ph/file/c76453380cd376c960163.jpg ",
     "keywords": [
     "telegram",
@@ -9,8 +9,8 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/Elite-Userbot/ELITEUSERBOT/",
-  "website": "https://github.com/Elite-Userbot/ELITEUSERBOT/",
+  "repository": "https://github.com/xHOPExINFINTY/Elite_UserBot",
+  "website": "https://github.com/xHOPExINFINTY/Elite_UserBot",
   "success_url": "https://t.me/ELITES_SUPPORT",
   "env": {
     "ENV": {
@@ -28,7 +28,7 @@
       "required": false
     },
     "ALIVE_MSG": {
-      "description": "Set Custom Alive Message When entering .hell Command.",
+      "description": "Set Custom Alive Message When entering .elite Command.",
       "value": "",
       "required": false
     },
@@ -97,7 +97,7 @@
        "value": ""
     }, 
     "STRING_SESSION": {
-      "description": "Get this value by running https://repl.it/@HellBoyOP/HellBot#main.py ",
+      "description": "Get this value by running https://repl.it/@xHOPExINFINTY/EliteBotStringSession",
       "value": ""
     },
     "HEROKU_API_KEY": {
