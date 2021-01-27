@@ -53,5 +53,5 @@ def delgvar(variable):
 
 globals.py
 
-git_url = "https://github.com/HellBoy-OP/lund"
+git_url = "https://github.com/xHOPExINFINTY/Elite_UserBot"
 repo_dir = "./drive"
