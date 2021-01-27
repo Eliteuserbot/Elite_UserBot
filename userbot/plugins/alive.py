@@ -18,7 +18,7 @@ pm_caption = "__**My EliteBot Is Running**__\n\n"
 
 pm_caption += f" __↼MY MASTER⇀__\n**『[{DEFAULTUSER}](tg://user?id={userid})』**\n\n"
 
-pm_caption += f" __EliteBot Version__ : __**{ELITEversion}**__\n"
+pm_caption += f" __EliteBot Version__ : __**{Eliteversion}**__\n"
 
 pm_caption += f" __Sudo Access__ : `{sudou}`\n"
 
