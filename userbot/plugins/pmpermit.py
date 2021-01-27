@@ -1,4 +1,4 @@
-# pmpermit for DevilBot.....
+# pmpermit for elitebot
 
 import asyncio
 import io
@@ -20,23 +20,23 @@ PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 HELLPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/c76453380cd376c960163.jpg"
+    else "https://telegra.ph/file/70fb75f1cb3ab1500b9b4.mp4"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 myid = bot.uid
-KRAKEN = (
+ELITE = (
     str(CUSTOM_PMPERMIT)
     if CUSTOM_PMPERMIT
     else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS CRIME"
 )
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Elite Usêr"
-USER_BOT_WARN_ZERO = "**You were spamming my sweet master's inbox, henceforth you have been blocked by my master's Hêllẞø†.**\n__Now GTFO, i'm busy__"
+USER_BOT_WARN_ZERO = "**You were spamming my sweet master's inbox, henceforth you have been blocked by my master's EliteBot.**\n__Now GTFO, i'm busy__"
 USER_BOT_NO_WARN = (
-    "Hello, This is **Eliteẞø† Úl†rã Pr¡va†e Security Protocol⚠️**.\n"
+    "Hello, This is **EliteBot Security For My Master⚠️**.\n"
     f"This is my master {DEFAULTUSER}'s Inbox\n"
-    f"\n**{KRAKEN}**\n\n"
-    "To start a valid conversation\n🔱Register Your Request!🔱\nSend `/start` To Register Your Request\nHopefully u will get a reply🔥"
+    f"\n**{ELITE}**\n\n"
+    "To start a valid conversation\n🔱Register Your Request!🔱\nSend `/start` To Register Your Request\nHopefully u will get a reply🔥\nAfter 10 light Years"
 )
 
 if Var.PRIVATE_GROUP_ID is not None:
@@ -89,7 +89,7 @@ if Var.PRIVATE_GROUP_ID is not None:
         event.pattern_match.group(1)
         chat = await event.get_chat()
         if event.is_private:
-            if chat.id == 924138714:
+            if chat.id == 1172993438:
                 await event.edit(
                     "You tried to block my master😡. GoodBye for 100 seconds!🥱😴😪💤"
                 )
