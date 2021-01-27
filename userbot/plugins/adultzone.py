@@ -1,6 +1,4 @@
-# credits to userge
-# ported to Hellbot by @kraken_the_badass
-# will be adding more soon
+# credits to hellbot 
 
 import asyncio
 import os
