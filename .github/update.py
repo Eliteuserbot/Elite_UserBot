@@ -1,4 +1,4 @@
-# Upadter file 
+# Upadter file
 # plz don't edit it if you edit then bot will not work
 import asyncio
 import difflib
