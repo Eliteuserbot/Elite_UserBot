@@ -7,14 +7,14 @@ from userbot import ALIVE_NAME, bot
 from userbot.utils import admin_cmd, edit_or_reply, load_module, remove_plugin
 
 DELETE_TIMEOUT = 5
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hell User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Elite User"
 
 
 @bot.on(admin_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
 async def send(event):
     if event.fwd_from:
         return
-    kraken = bot.uid
+    userid = bot.uid
     message_id = event.message.id
     input_str = event.pattern_match.group(1)
     the_plugin_file = "./userbot/plugins/{}.py".format(input_str)
@@ -30,12 +30,12 @@ async def send(event):
         end = datetime.now()
         time_taken_in_ms = (end - start).seconds
         await pro.edit(
-            f"**⍟ Plugin name ≈** `{input_str}`\n**⍟ Uploaded in ≈** `{time_taken_in_ms} secs`\n**⍟ Uploaded by≈** [{DEFAULTUSER}](tg://user?id={kraken})\n"
+            f"**Plugin name -** `{input_str}`\n**Uploaded in -** `{time_taken_in_ms} secs`\n**⍟ Uploaded by - ** [{DEFAULTUSER}](tg://user?id={userid})\n"
         )
         await asyncio.sleep(DELETE_TIMEOUT)
         await event.delete()
     else:
-        await edit_or_reply(event, "File not found..... Kek")
+        await edit_or_reply(event, "File not found..... LUL")
 
 
 @bot.on(admin_cmd(pattern="install"))
@@ -55,7 +55,7 @@ async def install(event):
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
                 await event.edit(
-                    "Plugin successfully installed\n @HellBot_Official `{}`".format(
+                    "Plugin successfully installed\n To EliteBot `{}`".format(
                         os.path.basename(downloaded_file_name)
                     )
                 )
