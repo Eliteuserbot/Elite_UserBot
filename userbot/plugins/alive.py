@@ -18,20 +18,20 @@ pm_caption = "__**MY Eʟɪᴛᴇ USERBOT IS RUNNING SUCCESSFULLY**__\n\n"
 
 pm_caption += f" **🔱__↼MY [MASTER](tg://user?id={userid})⇀__🔱**\n\n"
 
-pm_caption += f" **⚜️__EliteBot Version__⚜️  : __**{Eliteversion}**__**\n"
+pm_caption += f" **⚜️__EliteBot Version__⚜️      : __**{Eliteversion}**__**\n"
 
-pm_caption += " **🔶__Telethon Version__🔶    : `1.15.0`**\n"
+pm_caption += " **🔶__Telethon Version__🔶      : `1.15.0`**\n"
 
-pm_caption += f" **🌐__Sudo Access__🌐        : `{sudou}`**\n"
+pm_caption += f" **🌐__Sudo Access__🌐          : `{sudou}`**\n"
 
-pm_caption += f" **🔰__More Info__🔰          : [Here](@ELiteBOT_info)**\n"
+pm_caption += f" **🔰__More Info__🔰             : [Here](@ELiteBOT_info)**\n"
 
 pm_caption += (
-    " **❗️__Support__❗️             : [ᴊᴏɪɴ](https://t.me/ELITES_SUPPPORT)**\n"
+    " **❗️__Support__❗️                   : [ᴊᴏɪɴ](https://t.me/ELITES_SUPPPORT)**\n"
 )
 
 pm_caption += (
-    " **🛑__Channel__🛑             : [JOIN](https://t.me/ELITES_OFFICIAL)**\n\n"
+    " **🛑__Channel__🛑                   : [JOIN](https://t.me/ELITES_OFFICIAL)**\n\n"
 )
 
 pm_caption += "                ✨[REPO](https://github.com/xHOPExINFINTY/Elite_UserBot)✨  |  ✨[License](https://github.com/xHOPExINFINTY/Elite_UserBot/blob/master/LICENSE)✨"
